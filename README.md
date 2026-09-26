@@ -91,7 +91,7 @@ Two numerical integration methods are available:
 
 The simulator also calculates the system's total mechanical energy as a diagnostic for studying numerical behaviour.
 
-See [`research.md`](research.md) for the equations, units, assumptions, initialization method, numerical methods, limitations, and references.
+See [`research.md`](research.md) for the equations, units, assumptions, initialization method, numerical methods and limitations.
 
 ## Limitations
 
@@ -110,8 +110,14 @@ The current model omits:
 
 These limitations are intentional and define the current scope of the project.
 
-## References
+## Developer Note
 
-The physical model and initial conditions are based on research from NASA, NASA JPL, and the author's COSMOS project.
-
-See [`research.md`](research.md) for the detailed references and scientific background.
+> 🪐 **Built with curiosity, persistence, and an unreasonable interest in making planets go around in circles.**
+>
+> This project was developed as a first-year Physics academic project by **Neil N. P.** while exploring computational physics, Python, and numerical simulation.
+>
+> The project is also an opportunity to explore ideas from **[COSMOS](https://github.com/NeilNNP45-dev/COSMOS)**, a separate personal space-simulation project.
+>
+> **Building one star at a time.** ✨
+>
+> *Keep learning. Keep building. Keep asking why.*
