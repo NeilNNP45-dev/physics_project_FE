@@ -201,9 +201,9 @@ The simulation is based on Newton's law of universal gravitation.
 
 For two bodies with masses `m₁` and `m₂`, separated by a distance `r`:
 
-$
+$$
 F = G\frac{m_1m_2}{r^2}
-$
+$$
 
 where:
 
@@ -219,50 +219,50 @@ Gravity is always attractive.
 
 Newton's second law states:
 
-$
+$$
 F = ma
-$
+$$
 
 where:
 
 Therefore, the acceleration of body 1 caused by body 2 can be written as:
 
-$
+$$
 a_1 = G\frac{m_2}{r^2}
-$
+$$
 
 In two dimensions, the direction of the acceleration must also be
 considered.
 
 Let:
 
-$
+$$
 r_x = x_2-x_1
-$
+$$
 
 and:
 
-$
+$$
 r_y = y_2-y_1
-$
+$$
 
 The distance is:
 
-$
+$$
 r = \sqrt{r_x^2+r_y^2}
-$
+$$
 
 The acceleration components are then:
 
-$
+$$
 a_x =
 G\frac{m_2r_x}{r^3}
-$
+$$
 
-$
+$$
 a_y =
 G\frac{m_2r_y}{r^3}
-$
+$$
 
 These are the equations implemented in `physics.py`.
 
@@ -343,37 +343,37 @@ gravitational interactions between the bodies.
 For an orbit with semi-major axis `a` and eccentricity `e`, the orbital
 parameter is:
 
-$
+$$
 p=a(1-e^2)
-$
+$$
 
 The distance from the central body at a given true anomaly `ν` is:
 
-$
+$$
 r=\frac{a(1-e^2)}
         {1+e\cos(\nu)}
-$
+$$
 
 The radial and tangential components of velocity are:
 
-$
+$$
 v_r=
 \sqrt{\frac{\mu}{p}}e\sin(\nu)
-$
+$$
 
 and:
 
-$
+$$
 v_t=
 \sqrt{\frac{\mu}{p}}
 (1+e\cos(\nu))
-$
+$$
 
 where:
 
-$
+$$
 \mu = GM
-$
+$$
 
 For the Solar System model:
 
@@ -425,23 +425,23 @@ Euler integration is one of the simplest numerical integration methods.
 
 For a small time step `Δt`:
 
-$
+$$
 x_{new}=x_{old}+v_x\Delta t
-$
+$$
 
-$
+$$
 y_{new}=y_{old}+v_y\Delta t
-$
+$$
 
 The velocity is updated using acceleration:
 
-$
+$$
 v_{x,new}=v_{x,old}+a_x\Delta t
-$
+$$
 
-$
+$$
 v_{y,new}=v_{y,old}+a_y\Delta t
-$
+$$
 
 Euler integration is simple and easy to understand.
 
@@ -453,7 +453,6 @@ This makes it useful in this project as both:
 - a simple introduction to numerical integration
 - a comparison method against Velocity Verlet
 
-
 # 13. Velocity Verlet Integration
 
 Velocity Verlet is a numerical integration method that is well suited to
@@ -462,23 +461,11 @@ many mechanical systems.
 The position is first updated using the current velocity and acceleration:
 
 $$
-x_{new}
-=
-x_{old}
-+
-v_x\Delta t
-+
-\frac{1}{2}a_x\Delta t^2
+x_{\mathrm{new}} = x_{\mathrm{old}} + v_x\Delta t + \frac{1}{2}a_x\Delta t^2
 $$
 
 $$
-y_{new}
-=
-y_{old}
-+
-v_y\Delta t
-+
-\frac{1}{2}a_y\Delta t^2
+y_{\mathrm{new}} = y_{\mathrm{old}} + v_y\Delta t + \frac{1}{2}a_y\Delta t^2
 $$
 
 The accelerations are then recalculated using the new positions.
@@ -487,21 +474,11 @@ Finally, the velocity is updated using the average of the old and new
 accelerations:
 
 $$
-v_{x,new}
-=
-v_{x,old}
-+
-\frac{1}{2}
-(a_{x,old}+a_{x,new})\Delta t
+v_{x,\mathrm{new}} = v_{x,\mathrm{old}} + \frac{1}{2}(a_{x,\mathrm{old}} + a_{x,\mathrm{new}})\Delta t
 $$
 
 $$
-v_{y,new}
-=
-v_{y,old}
-+
-\frac{1}{2}
-(a_{y,old}+a_{y,new})\Delta t
+v_{y,\mathrm{new}} = v_{y,\mathrm{old}} + \frac{1}{2}(a_{y,\mathrm{old}} + a_{y,\mathrm{new}})\Delta t
 $$
 
 The implementation therefore calculates gravitational acceleration twice
@@ -536,40 +513,40 @@ The simulation also calculates the total mechanical energy of the system.
 
 Mechanical energy is the sum of kinetic and gravitational potential energy.
 
-$
+$$
 E = K + U
-$
+$$
 
 
 ## 15.1 Kinetic Energy
 
 For a body with mass `m` and speed `v`:
 
-$
+$$
 K=\frac{1}{2}mv^2
-$
+$$
 
 Since velocity has two components:
 
-$
+$$
 v^2=v_x^2+v_y^2
-$
+$$
 
 Therefore:
 
-$
+$$
 K=
 \frac{1}{2}m(v_x^2+v_y^2)
-$
+$$
 
 
 ## 15.2 Gravitational Potential Energy
 
 For two bodies:
 
-$
+$$
 U=-G\frac{m_1m_2}{r}
-$
+$$
 
 The negative sign represents the fact that gravity is an attractive force.
 
@@ -864,15 +841,15 @@ The gravitational calculation checks every unique pair of bodies.
 
 For `N` bodies, the number of unique pairs is:
 
-$
+$$
 \frac{N(N-1)}{2}
-$
+$$
 
 Therefore, the gravitational calculation has approximately:
 
-$
+$$
 O(N^2)
-$
+$$
 
 time complexity.
 
