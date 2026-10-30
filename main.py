@@ -28,7 +28,7 @@ MAX_ASTEROID_MASS = 1e-4
 
 # Radius is mainly a visual size in this simulation.
 MIN_ASTEROID_RADIUS = 1
-MAX_ASTEROID_RADIUS = 5
+MAX_ASTEROID_RADIUS = 3
 
 
 def spawn_asteroid(
@@ -59,14 +59,14 @@ def spawn_asteroid(
     # Give the asteroid an arbitrary starting velocity.
     #
     # The simulation will then let gravity change its motion.
-    vx = random.uniform(-4.0, 4.0)
-    vy = random.uniform(-4.0, 4.0)
+    vx = random.uniform(-1.0, 4.0)
+    vy = random.uniform(-1.0, 2.0)
 
     # Give the asteroid a random colour.
     color = (
-        random.randrange(0, 256),
-        random.randrange(0, 256),
-        random.randrange(0, 256),
+        random.randrange(10, 256),
+        random.randrange(6, 256),
+        random.randrange(8, 256),
     )
 
     asteroid = Body(
